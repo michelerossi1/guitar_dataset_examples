@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Dataset Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Guitar Dataset Examples</h1>
+    <p>Listen to examples for different guitars and playing styles:</p>
+    
+    <!-- Guitar 1 -->
+    <div class="guitar-row">
+        <h2>Guitar 1</h2>
+        <button onclick="playAudio('audio/guitar1_pick_neck.wav')">Pick + Neck</button>
+        <button onclick="playAudio('audio/guitar1_pick_bridge.wav')">Pick + Bridge</button>
+        <button onclick="playAudio('audio/guitar1_fing_neck.wav')">Finger + Neck</button>
+        <button onclick="playAudio('audio/guitar1_fing_bridge.wav')">Finger + Bridge</button>
+    </div>
+    
+    <!-- Guitar 2 -->
+    <div class="guitar-row">
+        <h2>Guitar 2</h2>
+        <button onclick="playAudio('audio/guitar2_pick_neck.wav')">Pick + Neck</button>
+        <button onclick="playAudio('audio/guitar2_pick_bridge.wav')">Pick + Bridge</button>
+        <button onclick="playAudio('audio/guitar2_fing_neck.wav')">Finger + Neck</button>
+        <button onclick="playAudio('audio/guitar2_fing_bridge.wav')">Finger + Bridge</button>
+    </div>
+
+    <!-- Guitar 3 -->
+    <div class="guitar-row">
+        <h2>Guitar 3</h2>
+        <button onclick="playAudio('audio/guitar3_pick_neck.wav')">Pick + Neck</button>
+        <button onclick="playAudio('audio/guitar3_pick_bridge.wav')">Pick + Bridge</button>
+        <button onclick="playAudio('audio/guitar3_fing_neck.wav')">Finger + Neck</button>
+        <button onclick="playAudio('audio/guitar3_fing_bridge.wav')">Finger + Bridge</button>
+    </div>
+
+    <!-- Guitar 4 -->
+    <div class="guitar-row">
+        <h2>Guitar 4</h2>
+        <button onclick="playAudio('audio/guitar4_pick_neck.wav')">Pick + Neck</button>
+        <button onclick="playAudio('audio/guitar4_pick_bridge.wav')">Pick + Bridge</button>
+        <button onclick="playAudio('audio/guitar4_fing_neck.wav')">Finger + Neck</button>
+        <button onclick="playAudio('audio/guitar4_fing_bridge.wav')">Finger + Bridge</button>
+    </div>
+
+    <script>
+        function playAudio(src) {
+            const audio = new Audio(src);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
