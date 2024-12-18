@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effected Guitar Dataset Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic CSS to make a 2x2 grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-gap: 20px; /* Space between grid items */
+            padding: 20px;
+        }
+
+        .grid-item {
+            text-align: center; /* Center align content inside each grid item */
+            border: 1px solid #ccc; /* Optional border around each item */
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .spectrogram {
+            width: 100%; /* Make spectrogram image take full width */
+            max-width: 500px; /* Optional, set max width */
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Effected Guitar Dataset Examples</h1>
+    <p>On this page, you can listen to and explore the log-mel spectrograms of the same guitar sample processed with various effects (sourced from Dataset 1):</p>
+    
+    <!-- Navigation link to the clean samples page -->
+    <p><a href="index.html">Go to Clean Samples</a></p>
+
+    <!-- 2x2 Grid Container -->
+    <div class="grid-container">
+        <!-- Guitar 1 Sample -->
+        <div class="grid-item">
+            <h2>Clean sample</h2>
+            <button onclick="playAudio('audio/effected/tele_neck_fing16__00000.wav')">Play Audio</button>
+            <img class="spectrogram" src="images/tele_neck_fing16__00000.png" alt="Spectrogram for Guitar 1 Effect 1">
+        </div>
+
+        <!-- Guitar 2 Sample -->
+        <div class="grid-item">
+            <h2>Overdrive</h2>
+            <button onclick="playAudio('audio/effected/tele_neck_fing16__10000.wav')">Play Audio</button>
+            <img class="spectrogram" src="images/tele_neck_fing16__10000.png" alt="Spectrogram for Guitar 2 Effect 2">
+        </div>
+
+        <!-- Guitar 3 Sample -->
+        <div class="grid-item">
+            <h2>Tremolo + Reverb</h2>
+            <button onclick="playAudio('audio/effected/tele_neck_fing16__00101.wav')">Play Audio</button>
+            <img class="spectrogram" src="images/tele_neck_fing16__00101.png" alt="Spectrogram for Guitar 3 Effect 3">
+        </div>
+
+        <!-- Guitar 4 Sample -->
+        <div class="grid-item">
+            <h2>Overdrive + Chorus + Delay</h2>
+            <button onclick="playAudio('audio/effected/tele_neck_fing16__11010.wav')">Play Audio</button>
+            <img class="spectrogram" src="images/tele_neck_fing16__11010.png" alt="Spectrogram for Guitar 4 Effect 4">
+        </div>
+    </div>
+
+    <script>
+        // Variable to keep track of the currently playing audio
+        let currentAudio = null;
+
+        function playAudio(src) {
+            // Stop the currently playing audio if any
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; // Reset to the start
+            }
+
+            // Create a new Audio object and play it
+            currentAudio = new Audio(src);
+            currentAudio.play();
+
+            // Clear the reference when the audio finishes playing
+            currentAudio.onended = () => {
+                currentAudio = null;
+            };
+        }
+    </script>
+</body>
+</html>
