@@ -6,6 +6,32 @@
     <title>Effected Guitar Dataset Demo</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Basic CSS to center the container and limit its width */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9; /* Optional: light background color */
+        }
+
+        .container {
+            max-width: 1200px; /* Set a max width for the entire content */
+            width: 100%; /* Allow responsiveness */
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in width */
+            background: #fff; /* Optional: white background */
+            border-radius: 10px; /* Optional: rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
         /* Basic CSS to make a 2x2 grid */
         .grid-container {
             display: grid;
@@ -44,40 +70,42 @@
     </style>
 </head>
 <body>
-    <h1>Effected Guitar Dataset Examples</h1>
-    <p>On this page, you can listen to and explore the log-mel spectrograms of the same guitar sample processed with various effects (sourced from Dataset 1):</p>
-    
-    <!-- Navigation link to the clean samples page -->
-    <p><a href="index.html">Go to Clean Samples</a></p>
+    <div class="container">
+        <h1>Effected Guitar Dataset Examples</h1>
+        <p>On this page, you can listen to and explore the log-mel spectrograms of the same guitar sample processed with various effects (sourced from Dataset 1):</p>
+        
+        <!-- Navigation link to the clean samples page -->
+        <p><a href="index.html">Go to Clean Samples</a></p>
 
-    <!-- 2x2 Grid Container -->
-    <div class="grid-container">
-        <!-- Guitar 1 Sample -->
-        <div class="grid-item">
-            <h2>Clean sample</h2>
-            <button onclick="playAudio('audio/effected/tele_neck_fing16__00000.wav')">Play Audio</button>
-            <img class="spectrogram" src="images/tele_neck_fing16__00000.png" alt="Spectrogram for Guitar 1 Effect 1">
-        </div>
+        <!-- 2x2 Grid Container -->
+        <div class="grid-container">
+            <!-- Guitar 1 Sample -->
+            <div class="grid-item">
+                <h2>Clean sample</h2>
+                <button onclick="playAudio('audio/effected/tele_neck_fing16__00000.wav')">Play Audio</button>
+                <img class="spectrogram" src="images/tele_neck_fing16__00000.png" alt="Spectrogram for Guitar 1 Effect 1">
+            </div>
 
-        <!-- Guitar 2 Sample -->
-        <div class="grid-item">
-            <h2>Overdrive</h2>
-            <button onclick="playAudio('audio/effected/tele_neck_fing16__10000.wav')">Play Audio</button>
-            <img class="spectrogram" src="images/tele_neck_fing16__10000.png" alt="Spectrogram for Guitar 2 Effect 2">
-        </div>
+            <!-- Guitar 2 Sample -->
+            <div class="grid-item">
+                <h2>Overdrive</h2>
+                <button onclick="playAudio('audio/effected/tele_neck_fing16__10000.wav')">Play Audio</button>
+                <img class="spectrogram" src="images/tele_neck_fing16__10000.png" alt="Spectrogram for Guitar 2 Effect 2">
+            </div>
 
-        <!-- Guitar 3 Sample -->
-        <div class="grid-item">
-            <h2>Tremolo + Reverb</h2>
-            <button onclick="playAudio('audio/effected/tele_neck_fing16__00101.wav')">Play Audio</button>
-            <img class="spectrogram" src="images/tele_neck_fing16__00101.png" alt="Spectrogram for Guitar 3 Effect 3">
-        </div>
+            <!-- Guitar 3 Sample -->
+            <div class="grid-item">
+                <h2>Tremolo + Reverb</h2>
+                <button onclick="playAudio('audio/effected/tele_neck_fing16__00101.wav')">Play Audio</button>
+                <img class="spectrogram" src="images/tele_neck_fing16__00101.png" alt="Spectrogram for Guitar 3 Effect 3">
+            </div>
 
-        <!-- Guitar 4 Sample -->
-        <div class="grid-item">
-            <h2>Overdrive + Chorus + Delay</h2>
-            <button onclick="playAudio('audio/effected/tele_neck_fing16__11010.wav')">Play Audio</button>
-            <img class="spectrogram" src="images/tele_neck_fing16__11010.png" alt="Spectrogram for Guitar 4 Effect 4">
+            <!-- Guitar 4 Sample -->
+            <div class="grid-item">
+                <h2>Overdrive + Chorus + Delay</h2>
+                <button onclick="playAudio('audio/effected/tele_neck_fing16__11010.wav')">Play Audio</button>
+                <img class="spectrogram" src="images/tele_neck_fing16__11010.png" alt="Spectrogram for Guitar 4 Effect 4">
+            </div>
         </div>
     </div>
 
